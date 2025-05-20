@@ -1,4 +1,4 @@
-import { List, Button, Text, Stack, Avatar, AvatarGroup, HStack } from '@chakra-ui/react'
+import { List, Button, Text, Stack, Avatar, HStack } from '@chakra-ui/react'
 import useGenre from '../hooks/useGenre';
 
 const GenreList = () => {
