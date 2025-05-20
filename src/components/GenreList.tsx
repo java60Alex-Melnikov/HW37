@@ -11,8 +11,8 @@ const GenreList = () => {
                     <Spinner size="xl" boxSize="65px" borderWidth="10px" color="yellow.500" marginTop= "40%" marginLeft= "10%"/>
                   ) :
         <Stack>
-            <Text fontSize="2xl" fontWeight="bold" paddingLeft={2}>Genres</Text>
             <List.Root gap={2} padding={2}>
+              <Text fontSize="2xl" fontWeight="bold" paddingLeft={2}>Genres</Text>
                 {genres?.map(genre => (
                     <List.Item key={genre.id}>
                         <Stack direction="row">
