@@ -20,9 +20,7 @@ const GenreList = () => {
                         </Avatar.Root>
                         </HStack>
                             <Button 
-                                variant="ghost" 
-                                borderWidth={0}
-                                width="60%"
+                                variant="outline" 
                                 justifyContent="flex-start"
                                 fontSize="lg"
                             >
