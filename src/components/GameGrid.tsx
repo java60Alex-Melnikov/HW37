@@ -11,7 +11,7 @@ const GameGrid = () => {
       {error ? (
         <Text color={"red"} fontSize={"2rem"}>{error}</Text>
       ) : isLoading ? (
-        <Spinner size="xl" />
+        <Spinner size="xl" boxSize="65px" borderWidth="10px" color="yellow.500" marginTop= "40%"/>
       ) : (
         <SimpleGrid
           marginStart={{
