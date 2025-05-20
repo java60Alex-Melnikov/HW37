@@ -4,12 +4,10 @@ import useGenre from '../hooks/useGenre';
 const GenreList = () => {
     const { data, error } = useGenre();
     const genres = data;
-
-    if (error) {
-        throw <Text color={"red"} fontSize={"2rem"}>{error}</Text>;
-    }
-
     return (
+            error ? (
+              <Text color={"red"} fontSize={"2rem"}>{error}</Text>
+            ) :
         <Stack>
             <Text fontSize="2xl" fontWeight="bold" paddingLeft={2}>Genres</Text>
             <List.Root gap={2} padding={2}>
