@@ -1,19 +1,41 @@
-import { Text} from '@chakra-ui/react'
+import { List, Button, Text, Stack, Avatar, AvatarGroup, HStack } from '@chakra-ui/react'
 import useGenre from '../hooks/useGenre';
 
 const GenreList = () => {
-    const {data, error} = useGenre();
+    const { data, error } = useGenre();
     const genres = data;
 
-    
-    
-  return (
-    <>
-    {error? <Text color={"red"} fontSize={"2rem"}>{error}</Text> : <ul>
-          {genres?.map(g => <li key={g.id}>{g.name}</li>)}
-      </ul>}
-    </>
-  )
-}
+    if (error) {
+        throw <Text color={"red"} fontSize={"2rem"}>{error}</Text>;
+    }
+
+    return (
+        <Stack>
+            <Text fontSize="2xl" fontWeight="bold" paddingLeft={2}>Genres</Text>
+            <List.Root gap={2} padding={2}>
+                {genres?.map(genre => (
+                    <List.Item key={genre.id}>
+                        <Stack direction="row">
+                        <HStack>
+                        <Avatar.Root size="lg" >
+                        <Avatar.Image src={genre.image_background}/>
+                        </Avatar.Root>
+                        </HStack>
+                            <Button 
+                                variant="ghost" 
+                                borderWidth={0}
+                                width="60%"
+                                justifyContent="flex-start"
+                                fontSize="lg"
+                            >
+                                {genre.name}
+                            </Button>
+                        </Stack>
+                    </List.Item>
+                ))}
+            </List.Root>
+        </Stack>
+    );
+};
 
 export default GenreList
